@@ -13,15 +13,17 @@ npm i @bramus/range
 ```js
 import { range } from '@bramus/range';
 
-// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 const r1 = range(0, 12);
+// ~> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-// [7, 8, 9, 10, 11, 12]
-const r2 = range(7,12);
+const r2 = range(7, 12);
+// ~> [7, 8, 9, 10, 11, 12]
 
-// [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 const r3 = range(0, 100, 10);
+// ~> [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ```
+
+🔗 Try it out online in the playground: [https://codepen.io/bramus/pen/dyVMPxV](https://codepen.io/bramus/pen/dyVMPxV)
 
 ## API
 
