@@ -54,3 +54,60 @@ describe('faulty numbers should throw', () => {
         equal(error.name, 'RangeError');
     });
 });
+
+describe('non-integers should throw', () => {
+    it('string start should throw', () => {
+        let error;
+        try {
+            range('1', 10);
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'TypeError');
+    });
+    it('double start should throw', () => {
+        let error;
+        try {
+            range(1.5, 10);
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'TypeError');
+    });
+    it('string end should throw', () => {
+        let error;
+        try {
+            range(1, '10');
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'TypeError');
+    });
+    it('double end should throw', () => {
+        let error;
+        try {
+            range(1, 10.5);
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'TypeError');
+    });
+    it('string step should throw', () => {
+        let error;
+        try {
+            range(1, 10, '1');
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'TypeError');
+    });
+    it('double step should throw', () => {
+        let error;
+        try {
+            range(1, 10, 1.2);
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'TypeError');
+    });
+});
