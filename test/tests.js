@@ -1,4 +1,4 @@
-import { deepEqual } from 'assert';
+import { equal, deepEqual } from 'assert';
 import { range } from '../src/index.js';
 
 describe('basic range tests', () => {
@@ -31,5 +31,26 @@ describe('stepped range tests (neg)', () => {
     });
     it('creates a range with step size 10', () => {
         deepEqual(range(-100, 100, 10), [-100, -90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+    });
+});
+
+describe('faulty numbers should throw', () => {
+    it('end > start should throw', () => {
+        let error;
+        try {
+            range(100, 10);
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'RangeError');
+    });
+    it('end < 1 should throw', () => {
+        let error;
+        try {
+            range(1, 10, 0);
+        } catch (e) {
+            error = e;
+        }
+        equal(error.name, 'RangeError');
     });
 });
