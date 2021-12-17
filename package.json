@@ -1,6 +1,6 @@
 {
     "name": "@bramus/range",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Create an array containing a range of elements (cfr. PHP's range)",
     "type": "module",
     "source": "src/index.js",
